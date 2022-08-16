@@ -1,4 +1,4 @@
-package com.ducumall.dm_item;
+package com.duckmall.dm_item;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
