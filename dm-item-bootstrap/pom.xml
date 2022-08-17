@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.duckmall</groupId>
+		<artifactId>dm-item</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>dm-item-bootstrap</artifactId>
+	<name>dm-item-bootstrap</name>
+	<description>dm-item-bootstrap</description>
+
+	<dependencies>
+		<!--sub models-->
+		<dependency>
+			<groupId>com.duckmall</groupId>
+			<artifactId>dm-item-bootstrap</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.duckmall</groupId>
+			<artifactId>dm-item-facade</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.duckmall</groupId>
+			<artifactId>dm-item-application</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.duckmall</groupId>
+			<artifactId>dm-item-domain</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.duckmall</groupId>
+			<artifactId>dm-item-dal</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.duckmall</groupId>
+			<artifactId>dm-item-cache</artifactId>
+		</dependency>
+		<!--sub models end-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
