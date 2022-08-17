@@ -2,19 +2,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.duckmall</groupId>
         <artifactId>dm-parent</artifactId>
         <version>0.0.1</version><!-- lookup parent from repository -->
     </parent>
-    <groupId>com.ducumall</groupId>
-    <artifactId>dm_item</artifactId>
+
+    <groupId>com.duckmall</groupId>
+    <artifactId>dm-item</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dm_item</name>
-    <description>dm_item</description>
+    <name>dm-item</name>
+    <description>dm-item</description>
+    <packaging>pom</packaging>
+
+    <developers>
+        <developer>
+            <name>frank</name>
+            <email>mercer.sunxy@aliyun.com</email>
+        </developer>
+    </developers>
+
     <properties>
         <java.version>1.8</java.version>
+        <mybatis.version>2.2.2</mybatis.version>
+        <lombok.version>1.18.2</lombok.version>
+        <item.facade>1.0.0-SNAPSHOT</item.facade>
+        <nacos.versin>0.2.2.RELEASE</nacos.versin>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -37,7 +53,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <version>0.2.2.RELEASE</version>
+            <version>0.9.0.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -57,6 +73,82 @@
         </dependency>
     </dependencies>
 
+
+    <dependencyManagement>
+        <dependencies>
+            <!--sub models-->
+            <dependency>
+                <groupId>com.duckmall</groupId>
+                <artifactId>dm-item-bootstrap</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.duckmall</groupId>
+                <artifactId>dm-item-facade</artifactId>
+                <version>${item.facade}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.duckmall</groupId>
+                <artifactId>dm-item-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.duckmall</groupId>
+                <artifactId>dm-item-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.duckmall</groupId>
+                <artifactId>dm-item-dal</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.duckmall</groupId>
+                <artifactId>dm-item-cache</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${snakeyaml.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <scope>runtime</scope>
+                <optional>true</optional>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.30</version>
+                <scope>runtime</scope>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -73,5 +165,9 @@
             </plugin>
         </plugins>
     </build>
+
+<!--    <modules>-->
+<!--        <module>dm-item-bootstrap</module>-->
+<!--    </modules>-->
 
 </project>

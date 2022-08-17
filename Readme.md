@@ -1,0 +1,3 @@
+application.yml项目自身配置
+
+bootstrap.yaml 配置nacos地址读取配置文件
