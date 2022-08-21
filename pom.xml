@@ -166,8 +166,8 @@
         </plugins>
     </build>
 
-<!--    <modules>-->
-<!--        <module>dm-item-bootstrap</module>-->
-<!--    </modules>-->
+    <modules>
+        <module>dm-item-bootstrap</module>
+    </modules>
 
 </project>
